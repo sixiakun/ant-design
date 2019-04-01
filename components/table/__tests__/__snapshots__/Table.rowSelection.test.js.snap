@@ -26,7 +26,9 @@ exports[`Table.rowSelection fix selection column on the left 1`] = `
                 class=""
               >
                 <colgroup>
-                  <col />
+                  <col
+                    style="width:62px;min-width:62px"
+                  />
                   <col />
                 </colgroup>
                 <thead
@@ -36,37 +38,47 @@ exports[`Table.rowSelection fix selection column on the left 1`] = `
                     <th
                       class="ant-table-fixed-columns-in-body ant-table-selection-column"
                     >
-                      <div
-                        title="Sort"
-                      >
-                        <div
-                          class="ant-table-selection"
+                      <div>
+                        <span
+                          class="ant-table-column-title"
                         >
-                          <label
-                            class="ant-checkbox-wrapper"
+                          <div
+                            class="ant-table-selection"
                           >
-                            <span
-                              class="ant-checkbox"
+                            <label
+                              class="ant-checkbox-wrapper"
                             >
-                              <input
-                                class="ant-checkbox-input"
-                                type="checkbox"
-                              />
                               <span
-                                class="ant-checkbox-inner"
-                              />
-                            </span>
-                          </label>
-                        </div>
+                                class="ant-checkbox"
+                              >
+                                <input
+                                  class="ant-checkbox-input"
+                                  type="checkbox"
+                                />
+                                <span
+                                  class="ant-checkbox-inner"
+                                />
+                              </span>
+                            </label>
+                          </div>
+                        </span>
+                        <span
+                          class="ant-table-column-sorter"
+                        />
                       </div>
                     </th>
                     <th
                       class=""
                     >
-                      <div
-                        title="Sort"
-                      >
-                        Name
+                      <div>
+                        <span
+                          class="ant-table-column-title"
+                        >
+                          Name
+                        </span>
+                        <span
+                          class="ant-table-column-sorter"
+                        />
                       </div>
                     </th>
                   </tr>
@@ -232,7 +244,9 @@ exports[`Table.rowSelection fix selection column on the left 1`] = `
                   class="ant-table-fixed"
                 >
                   <colgroup>
-                    <col />
+                    <col
+                      style="width:62px;min-width:62px"
+                    />
                   </colgroup>
                   <thead
                     class="ant-table-thead"
@@ -241,28 +255,33 @@ exports[`Table.rowSelection fix selection column on the left 1`] = `
                       <th
                         class="ant-table-selection-column"
                       >
-                        <div
-                          title="Sort"
-                        >
-                          <div
-                            class="ant-table-selection"
+                        <div>
+                          <span
+                            class="ant-table-column-title"
                           >
-                            <label
-                              class="ant-checkbox-wrapper"
+                            <div
+                              class="ant-table-selection"
                             >
-                              <span
-                                class="ant-checkbox"
+                              <label
+                                class="ant-checkbox-wrapper"
                               >
-                                <input
-                                  class="ant-checkbox-input"
-                                  type="checkbox"
-                                />
                                 <span
-                                  class="ant-checkbox-inner"
-                                />
-                              </span>
-                            </label>
-                          </div>
+                                  class="ant-checkbox"
+                                >
+                                  <input
+                                    class="ant-checkbox-input"
+                                    type="checkbox"
+                                  />
+                                  <span
+                                    class="ant-checkbox-inner"
+                                  />
+                                </span>
+                              </label>
+                            </div>
+                          </span>
+                          <span
+                            class="ant-table-column-sorter"
+                          />
                         </div>
                       </th>
                     </tr>
@@ -394,6 +413,7 @@ exports[`Table.rowSelection fix selection column on the left 1`] = `
             class="ant-pagination-item-link"
           >
             <i
+              aria-label="icon: left"
               class="anticon anticon-left"
             >
               <svg
@@ -430,6 +450,7 @@ exports[`Table.rowSelection fix selection column on the left 1`] = `
             class="ant-pagination-item-link"
           >
             <i
+              aria-label="icon: right"
               class="anticon anticon-right"
             >
               <svg

@@ -31,7 +31,9 @@ exports[`Table.filter renders custom content correctly 1`] = `
   <div
     class="ant-dropdown  ant-dropdown-placement-bottomRight  ant-dropdown-hidden"
   >
-    <div>
+    <div
+      class="ant-table-filter-dropdown"
+    >
       <div
         class="custom-filter-dropdown"
       >
@@ -94,13 +96,20 @@ exports[`Table.filter renders filter correctly 1`] = `
                   <th
                     class="ant-table-column-has-actions ant-table-column-has-filters"
                   >
-                    <div
-                      title="Sort"
-                    >
-                      Name
+                    <div>
+                      <span
+                        class="ant-table-column-title"
+                      >
+                        Name
+                      </span>
+                      <span
+                        class="ant-table-column-sorter"
+                      />
                     </div>
                     <i
+                      aria-label="icon: filter"
                       class="anticon anticon-filter ant-dropdown-trigger"
+                      tabindex="-1"
                       title="Filter menu"
                     >
                       <svg
