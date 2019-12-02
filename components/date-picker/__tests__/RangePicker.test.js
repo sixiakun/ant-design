@@ -260,7 +260,7 @@ describe('RangePicker', () => {
     const wrapper = mount(<RangePicker ranges={{ 'recent two days': range }} onOk={handleOk} />);
     wrapper.find('.ant-calendar-picker-input').simulate('click');
     wrapper.find('.ant-calendar-range-quick-selector Tag').simulate('click');
-    expect(handleOk).toBeCalledWith(range);
+    expect(handleOk).toHaveBeenCalledWith(range);
   });
 
   // https://github.com/ant-design/ant-design/issues/9267
@@ -312,7 +312,7 @@ describe('RangePicker', () => {
     );
     wrapper.find('.ant-calendar-picker-input').simulate('click');
     wrapper.find('.ant-calendar-range-quick-selector Tag').simulate('click');
-    expect(handleOpenChange).toBeCalledWith(false);
+    expect(handleOpenChange).toHaveBeenCalledWith(false);
   });
 
   it('customize separator', () => {
@@ -386,5 +386,26 @@ describe('RangePicker', () => {
           .hasClass('ant-calendar-month-panel-cell-disabled'),
       ).toBe(false);
     });
+  });
+
+  // https://github.com/ant-design/ant-design/issues/17135
+  it('the end time should be less than the start time', () => {
+    const wrapper = mount(<RangePicker defaultValue={[moment(), moment()]} />);
+    wrapper.find('.ant-calendar-picker-input').simulate('click');
+    const firstInput = wrapper.find('.ant-calendar-input').first();
+    const secondInput = wrapper.find('.ant-calendar-input').last();
+    firstInput.simulate('change', {
+      target: {
+        value: moment()
+          .add(1, 'day')
+          .format('YYYY-MM-DD'),
+      },
+    });
+    expect(firstInput.getDOMNode().value).toBe(
+      moment()
+        .add(1, 'day')
+        .format('YYYY-MM-DD'),
+    );
+    expect(secondInput.getDOMNode().value).toBe('');
   });
 });

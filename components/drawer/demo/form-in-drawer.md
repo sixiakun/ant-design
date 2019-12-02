@@ -11,12 +11,10 @@ title:
 
 ## en-US
 
-Use form in drawer with submit button.
+Use a form in Drawer with a submit button.
 
 ```jsx
-import {
-  Drawer, Form, Button, Col, Row, Input, Select, DatePicker, Icon,
-} from 'antd';
+import { Drawer, Form, Button, Col, Row, Input, Select, DatePicker, Icon } from 'antd';
 
 const { Option } = Select;
 
@@ -47,6 +45,7 @@ class DrawerForm extends React.Component {
           width={720}
           onClose={this.onClose}
           visible={this.state.visible}
+          bodyStyle={{ paddingBottom: 80 }}
         >
           <Form layout="vertical" hideRequiredMark>
             <Row gutter={16}>
@@ -67,7 +66,7 @@ class DrawerForm extends React.Component {
                       addonBefore="http://"
                       addonAfter=".com"
                       placeholder="Please enter url"
-                    />
+                    />,
                   )}
                 </Form.Item>
               </Col>
@@ -81,7 +80,7 @@ class DrawerForm extends React.Component {
                     <Select placeholder="Please select an owner">
                       <Option value="xiao">Xiaoxiao Fu</Option>
                       <Option value="mao">Maomao Zhou</Option>
-                    </Select>
+                    </Select>,
                   )}
                 </Form.Item>
               </Col>
@@ -93,7 +92,7 @@ class DrawerForm extends React.Component {
                     <Select placeholder="Please choose the type">
                       <Option value="private">Private</Option>
                       <Option value="public">Public</Option>
-                    </Select>
+                    </Select>,
                   )}
                 </Form.Item>
               </Col>
@@ -107,7 +106,7 @@ class DrawerForm extends React.Component {
                     <Select placeholder="Please choose the approver">
                       <Option value="jack">Jack Ma</Option>
                       <Option value="tom">Tom Liu</Option>
-                    </Select>
+                    </Select>,
                   )}
                 </Form.Item>
               </Col>
@@ -119,7 +118,7 @@ class DrawerForm extends React.Component {
                     <DatePicker.RangePicker
                       style={{ width: '100%' }}
                       getPopupContainer={trigger => trigger.parentNode}
-                    />
+                    />,
                   )}
                 </Form.Item>
               </Col>
@@ -142,7 +141,7 @@ class DrawerForm extends React.Component {
           <div
             style={{
               position: 'absolute',
-              left: 0,
+              right: 0,
               bottom: 0,
               width: '100%',
               borderTop: '1px solid #e9e9e9',

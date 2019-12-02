@@ -2,8 +2,11 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Card from '../index';
 import Button from '../../button/index';
+import mountTest from '../../../tests/shared/mountTest';
 
 describe('Card', () => {
+  mountTest(Card);
+
   beforeAll(() => {
     jest.useFakeTimers();
   });
@@ -33,11 +36,11 @@ describe('Card', () => {
   it('warning', () => {
     const warnSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
     mount(<Card noHovering>xxx</Card>);
-    expect(warnSpy).toBeCalledWith(
+    expect(warnSpy).toHaveBeenCalledWith(
       'Warning: [antd: Card] `noHovering` is deprecated, you can remove it safely or use `hoverable` instead.',
     );
     mount(<Card noHovering={false}>xxx</Card>);
-    expect(warnSpy).toBeCalledWith(
+    expect(warnSpy).toHaveBeenCalledWith(
       'Warning: [antd: Card] `noHovering={false}` is deprecated, use `hoverable` instead.',
     );
     warnSpy.mockRestore();
@@ -64,7 +67,7 @@ describe('Card', () => {
       .find('.ant-tabs-tab')
       .at(1)
       .simulate('click');
-    expect(onTabChange).toBeCalledWith('tab2');
+    expect(onTabChange).toHaveBeenCalledWith('tab2');
   });
 
   it('getCompatibleHoverable should work', () => {
